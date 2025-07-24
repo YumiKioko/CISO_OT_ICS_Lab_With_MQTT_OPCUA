@@ -1,0 +1,14 @@
+version: '3'
+services:
+  plc:
+    build: ./PLC
+    ports:
+      - "502:502"
+  attacker:
+    build: ./Attacker
+    volumes:
+      - ./PCAP:/data
+  ids:
+    build: ./IDS
+    ports:
+      - "3000:3000"
