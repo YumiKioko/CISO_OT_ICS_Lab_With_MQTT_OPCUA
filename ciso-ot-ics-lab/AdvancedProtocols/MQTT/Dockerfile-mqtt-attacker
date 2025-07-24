@@ -1,0 +1,5 @@
+FROM python:3.11-slim
+RUN pip install paho-mqtt
+WORKDIR /app
+COPY publish_attack.py subscribe_monitor.py replay_spoof_attack.py /app/
+CMD ["python3", "publish_attack.py"]
